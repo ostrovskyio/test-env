@@ -6,7 +6,6 @@
     jasmineEnv.addReporter(reporter);
 
     window.initiateTest = function() {
-        console.log('test initiated');
         var testPanel = document.createElement('div');
         testPanel.setAttribute('id', 'test-panel');
         document.querySelector(".js-container").appendChild(testPanel);
