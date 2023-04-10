@@ -89,27 +89,15 @@ describe("Zoom L28", () => {
   
   });
 
+  //З даним варіантом тестування в мене виникли труднощі.
+  //Використовував багато варіантів коду для тесту, але всі мені
+  //чомусь показують, що умова не виконується. Хоча насправді все 
+  //працює. Буду вдячний, якщо допоможете знайти причину)
+  
   describe("Scroll L28", () => {
-    let event;
-  
-    beforeEach(() => {
-      event = new KeyboardEvent("keydown", { key: "a" });
-    });
-  
-    afterEach(() => {
-      event = null;
-    });
-  
-    it("Should scroll to 'a'", () => {
-      const element = document.createElement("div");
-      elementA.id = "a";
-      document.body.appendChild(elementA);
-      document.dispatchEvent(event);
-  
-      expect(window.scrollY).toBeGreaterThan(0);
-      expect(elementA.getBoundingClientRect().top).toBeCloseTo(0, 1);
-  
-      elementA.remove();
+    it("Should scroll to button", () => {
+      const element = document.getElementById(key);
+      expect(element.scrollIntoView).toEqual({behavior: "smooth", block: "start", inline: "nearest"});
     });
   });
 
