@@ -1,15 +1,14 @@
-describe("Sum of tow numbers", () => {
-    const desc = "<p>Sum of tow numbers</p>";
+
+describe("Check user event", () => {
+    const desc = "<p>Check if button was clicked</p>";
 
     describe(desc, () => {
-        it("should return 5", () => {
-            const result = sum(2, 3);
-            expect(result).toBe(5);
-        });
-
-        it("should return 0", () => {
-            const result = sum(0, 1);
-            expect(result).toBe(0);
+        it("Check if button was clicked", () => {
+            spyOn(console, 'log');
+            onClick({
+                target: 'button'
+            });
+            expect(console.log).toHaveBeenCalled();
         });
     });
 });
